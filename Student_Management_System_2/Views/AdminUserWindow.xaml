@@ -1,0 +1,631 @@
+﻿<Window x:Class="Student_Management_System_2.Views.AdminUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Student_Management_System_2.VeiwModel"
+        mc:Ignorable="d"
+        Title="AdminUserWindow" Height="650" Width="1050"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:AdminUserWindowVM/>
+    </Window.DataContext>
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+
+            <Border Grid.Column="0" CornerRadius="20 0 0 20">
+                <Border.Background>
+                    <ImageBrush ImageSource="/Images/1.jpeg"/>
+                </Border.Background>
+                <Border CornerRadius="20 0 0 20"
+            BorderThickness="5"
+                Opacity="100">
+                    <Border.BorderBrush>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#3C1787" Offset="0"/>
+                            <GradientStop Color="#DA34AE" Offset="0.75"/>
+                            <GradientStop Color="#641456" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                            <GradientStop Color="#641456" Offset="0"/>
+                            <GradientStop Color="#2A118D" Offset="0.75"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+
+
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="/Images/21.png" VerticalAlignment="Top"
+                           Opacity="0.80"
+                           Width="90" Margin="10"/>
+                            <TextBlock Text="Welcome to Faculty of Engineering"
+                               FontWeight="Medium"
+                               Foreground="DarkGray"
+                               FontSize="18"
+                               TextWrapping="Wrap"
+                               HorizontalAlignment="Center"
+                               TextAlignment="Center"/>
+
+                           
+
+                            <Button
+                            Command="{Binding OpenUserRegistrationCommand}"
+                            BorderThickness="0"
+                            Content="User Registration"
+                            FontSize="12"
+                            Foreground="White"
+                            FontFamily="Motserrat"
+                            Cursor="Hand"
+                            Margin="20 50 20 20">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#A61A8E"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#511981"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                                <Button.Template>
+                                    <ControlTemplate  TargetType ="Button">
+                                        <Border Width="150" Height="50"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+
+                            <Button
+                            
+                            BorderThickness="0"
+                            Content="Admin Registration"
+                            FontSize="12"
+                            Foreground="White"
+                            FontFamily="Motserrat"
+                            Cursor="Hand"
+                            Margin="20 50 20 20">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#511981"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#511981"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                                <Button.Template>
+                                    <ControlTemplate  TargetType ="Button">
+                                        <Border Width="150" Height="50"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+
+
+                            <Button
+                            Command="{Binding OpenModuleRegistrationCommand}"
+                            BorderThickness="0"
+                            Content="Module Registration"
+                            FontSize="12"
+                            Foreground="White"
+                            FontFamily="Motserrat"
+                            Cursor="Hand"
+                            Margin="20 50 20 20">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#A61A8E"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#511981"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                                <Button.Template>
+                                    <ControlTemplate  TargetType ="Button">
+                                        <Border Width="150" Height="50"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+
+
+
+
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Border>
+
+
+
+            <Border Grid.Column="1" CornerRadius="0 20 20 0">
+                <Border.Background>
+                    <ImageBrush ImageSource="/Images/1.jpeg"/>
+                </Border.Background>
+                <Border CornerRadius="0 20 20 0"
+            BorderThickness="5"
+                Opacity="0.85">
+                    <Border.BorderBrush>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#3C1787" Offset="0"/>
+                            <GradientStop Color="#DA34AE" Offset="0.75"/>
+                            <GradientStop Color="#88168D" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                            <GradientStop Color="#88168D" Offset="0"/>
+                            <GradientStop Color="#2A118D" Offset="0.75"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.75*"/>
+                            <RowDefinition Height="4*"/>
+                            <RowDefinition Height="0.5*"/>
+                            <RowDefinition Height="2.5*"/>
+                            <RowDefinition Height="*"/>
+
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Row="0" Grid.Column="3">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"
+                                    Margin="0 0 20 0">
+
+
+                                <Button x:Name="btnClose"
+                           
+                            BorderThickness="0"
+                                Margin=" 0 0 0 0"
+                            Content="X"
+                            FontSize="12"
+                            Foreground="White"
+                            FontFamily="Motserrat"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                             >
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="#AE1995"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#BD1A8A"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                    <Button.Template>
+                                        <ControlTemplate  TargetType ="Button">
+                                            <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+
+                                <Button x:Name="btnMinimize"
+                            
+                            BorderThickness="0"
+                                Margin="18 0 0 0"
+                            Content="-"
+                            Foreground="White"
+                            FontSize="16"
+                            FontFamily="Motserrat"
+                            Cursor="Hand"
+                            Grid.Column="1"
+                            Click="btnMinimize_Click">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="#28AEEd"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#278BEF"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                    <Button.Template>
+                                        <ControlTemplate  TargetType ="Button">
+                                            <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+
+                                    </Button.Template>
+
+
+                                </Button>
+
+
+                                <Button x:Name="btnBack"
+                           Margin="20 0 0 0"
+                            BorderThickness="0"
+                            Content="B"
+                            FontSize="12"
+                            Foreground="White"
+                            FontFamily="Motserrat"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                                Click="btnBack_Click"
+                            >
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="#AE1995"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#BD1A8A"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                    <Button.Template>
+                                        <ControlTemplate  TargetType ="Button">
+                                            <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </StackPanel>
+
+
+
+
+
+
+
+
+                        </Grid>
+                        <StackPanel Grid.Row="0" Grid.ColumnSpan="4" Orientation="Horizontal">
+
+                            <TextBlock Text="  Admin Registration" FontSize="30" TextAlignment="Center" 
+                                       VerticalAlignment="Center"
+                                       Foreground="White"
+                                       FontWeight="Bold"
+                                       FontFamily="Motserrat"/>
+
+
+                        </StackPanel>
+
+
+
+                        <ScrollViewer Grid.Row="1" Grid.ColumnSpan="4"
+                                  HorizontalScrollBarVisibility="Auto"
+                                  VerticalScrollBarVisibility="Auto">
+                            <ListView SelectedItem="{Binding SelectedAdmin}" ItemsSource="{Binding Admins}" Name="AdminList" Margin="0" VerticalAlignment="Center" Height="270">
+
+                                <ListView.View>
+
+                                    <GridView>
+                                        <GridViewColumn Header="Admin  ID" Width="80" DisplayMemberBinding="{Binding AdminId}"/>
+                                        <GridViewColumn Header="First Name" Width="150" DisplayMemberBinding="{Binding AdminFirstName}"/>
+                                        <GridViewColumn Header="Last Name" Width="150" DisplayMemberBinding="{Binding AdminLastName}"/>
+                                       
+                                        <GridViewColumn Header="Username" Width="150" DisplayMemberBinding="{Binding Username}"/>
+                                        <GridViewColumn Header="Password" Width="150" DisplayMemberBinding="{Binding Password}"/>
+                                        <!--<GridViewColumn Header="Modules" Width="150" DisplayMemberBinding="{Binding StudentModules}"/>-->
+                                        <!--<GridViewColumn Header="Modules" Width="150">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox>
+                                                </ComboBox>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+
+                                    <GridViewColumn Header="GPA" Width="150" DisplayMemberBinding="{Binding StudentGpa}"/>-->
+                                        <!--<GridViewColumn Header="Image" Width="150" DisplayMemberBinding="{Binding StudentImage}"/>-->
+                                    </GridView>
+
+                                </ListView.View>
+                            </ListView>
+                        </ScrollViewer>
+
+                        <CheckBox Grid.Row="2" x:Name="EnableCheckBox" FontSize="15" Content="Edit" HorizontalAlignment="Left" Foreground="White" Margin="20 15 0 0"  VerticalAlignment="Center"/>
+
+                        <Grid x:Name="EditGrid" IsEnabled="{Binding ElementName=EnableCheckBox, Path=IsChecked}" Grid.Row="3" Grid.ColumnSpan="4">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Row="0" Grid.Column="0"
+                                   Text="Admin ID     :" 
+                                   Foreground="White" 
+                                   FontSize="20" 
+                                   VerticalAlignment="Center" 
+                                   Margin="20 0 0 0"/>
+
+
+
+                            <TextBlock Grid.Row="1" Grid.Column="0"
+                                   Text="First Name     :" 
+                                   Foreground="White" 
+                                   FontSize="20" 
+                                   VerticalAlignment="Center" 
+                                   Margin="20 0 0 0"/>
+
+                            <TextBlock Grid.Row="2" Grid.Column="0"
+                                   Text="Last Name     :" 
+                                   Foreground="White" 
+                                   FontSize="20" 
+                                   VerticalAlignment="Center" 
+                                   Margin="20 0 0 0"/>
+
+
+
+                            <TextBlock Grid.Row="0" Grid.Column="2"
+                                   Text="USERNAME     :" 
+                                   Foreground="White" 
+                                   FontSize="20" 
+                                   VerticalAlignment="Center" 
+                                   Margin="20 0 0 0"/>
+
+                            <TextBlock Grid.Row="1" Grid.Column="2"
+                                   Text="PASSWORD          :" 
+                                   Foreground="White" 
+                                   FontSize="20" 
+                                   VerticalAlignment="Center" 
+                                   Margin="20 0 0 0"/>
+
+                            <TextBox x:Name="AdminIdTextBox" Text="{Binding AdminID, Mode=TwoWay }" 
+                                 Grid.Row="0" Grid.Column="1"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 TextWrapping="Wrap" 
+                                  Width="150"/>
+
+
+                            <TextBox x:Name="AdminFirstNameTextBox" Text="{Binding AdminFirstName, Mode=TwoWay}" 
+                                 Grid.Row="1" Grid.Column="1"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 TextWrapping="Wrap" 
+                                  Width="150"/>
+
+                            <TextBox x:Name="AdminLastNameTextBox" Text="{Binding AdminLastName, Mode=TwoWay}" 
+                                 Grid.Row="2" Grid.Column="1"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 TextWrapping="Wrap" 
+                                  Width="150"/>
+
+                            <TextBox x:Name="AdminUsernameTextBox" Text="{Binding AdminUsername, Mode=TwoWay}" 
+                                 Grid.Row="0" Grid.Column="3"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 TextWrapping="Wrap" 
+                                  Width="150"/>
+
+
+
+
+
+                            <TextBox x:Name="AdminPasswordTextBox" Text="{Binding AdminPassword, Mode=TwoWay}" 
+                                 Grid.Row="1" Grid.Column="3"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 TextWrapping="Wrap" 
+                                  Width="150"/>
+
+                            <!--<ComboBox x:Name="StudentModulesTextBox" Text="{Binding ElementName=StudentList, Path=SelectedItem.StudentModules}" 
+                                 Grid.Row="2" Grid.Column="3"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"                    
+                                  Width="150"/>-->
+
+
+                            <!--<Button Grid.Row="0" Grid.Column="4" Foreground="White" VerticalAlignment="Center" Margin="20 0 0 0"
+                                       Content="Image      :" FontSize="20" 
+                                Click="Button_Click_2"/>-->
+
+                            <!--<Image Grid.Row="1" Grid.Column="4" 
+                               Grid.RowSpan="2" 
+                               x:Name="StudentImage" 
+                               Source="{Binding ElementName=ItemList, Path=SelectedItem.StudentImage, Mode=OneWay }"/>-->
+                        </Grid>
+                        <!--<Grid Grid.Row="3" Grid.ColumnSpan="4" x:Name="EditGrid" IsEnabled="{Binding ElementName=EnableCheckBox, Path=IsChecked}"  HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                        <Label Content="Name"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                        <Label Content="Address"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="NameTextBox" Text="{Binding ElementName=ItemList, Path=SelectedItem.Name, Mode=OneWay}" HorizontalAlignment="Left" Margin="128,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="AddressTextBox" Text="{Binding ElementName=ItemList, Path=SelectedItem.Address , Mode=OneWay}" HorizontalAlignment="Left" Margin="128,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>-->
+
+                        <Grid Grid.Row="4" Grid.ColumnSpan="4">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+
+                                <Button x:Name="CreateButton"
+                           Command="{Binding AddCommand}" 
+                            BorderThickness="0"
+                            Content="ADD"
+                            FontSize="12"
+                            Foreground="White"
+                            FontFamily="Motserrat"
+                            Cursor="Hand"
+                            Margin="20">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="#A61A8E"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#511981"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                    <Button.Template>
+                                        <ControlTemplate  TargetType ="Button">
+                                            <Border Width="80" Height="30"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+
+
+                                <Button x:Name="ReadButton"
+                            Command="{Binding RefreshCommand}"
+                            BorderThickness="0"
+                            Content="REFRESH"
+                            FontSize="12"
+                            Foreground="White"
+                            FontFamily="Motserrat"
+                            Cursor="Hand"
+                            Margin="20"
+                                        >
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="#A61A8E"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#511981"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                    <Button.Template>
+                                        <ControlTemplate  TargetType ="Button">
+                                            <Border Width="80" Height="30"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+
+
+                                <Button x:Name="UpdateButton"
+                           Command="{Binding UpdateCommand}" 
+                            BorderThickness="0"
+                            Content="UPDATE"
+                            FontSize="12"
+                            Foreground="White"
+                            FontFamily="Motserrat"
+                            Cursor="Hand"
+                            Margin="20">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="#A61A8E"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#511981"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                    <Button.Template>
+                                        <ControlTemplate  TargetType ="Button">
+                                            <Border Width="80" Height="30"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+
+
+                                <Button x:Name="DeleteButton"
+                           Command="{Binding DeleteCommand}" 
+                            BorderThickness="0"
+                            Content="DELETE"
+                            FontSize="12"
+                            Foreground="White"
+                            FontFamily="Motserrat"
+                            Cursor="Hand"
+                            Margin="20">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="#A61A8E"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#511981"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                    <Button.Template>
+                                        <ControlTemplate  TargetType ="Button">
+                                            <Border Width="80" Height="30"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+
+
+
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Border>
+        </Grid>
+
+
+
+    </Grid>
+
+</Window>

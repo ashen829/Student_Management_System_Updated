@@ -1,0 +1,49 @@
+﻿<Window x:Class="Student_Management_System_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:local="clr-namespace:Student_Management_System_2.VeiwModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="1050"
+         WindowStyle="None"
+        ResizeMode="NoResize"
+       
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <ListView Grid.Row="0" ItemsSource="{Binding Students}" SelectedItem="{Binding SelectedStudent}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding StudentId}" />
+                    <GridViewColumn Header="First Name" DisplayMemberBinding="{Binding StudentFirstName}" />
+                    <GridViewColumn Header="Last Name" DisplayMemberBinding="{Binding StudentLastName}" />
+                    <GridViewColumn Header="Department" DisplayMemberBinding="{Binding StudentDepartment}" />
+                    <GridViewColumn Header="District" DisplayMemberBinding="{Binding StudentDistrict}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Grid Grid.Row="1" Margin="0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" Text="{Binding StudentId}" />
+            <TextBox Grid.Column="1" Text="{Binding StudentFirstName}" />
+            <TextBox Grid.Column="2" Text="{Binding StudentLastName}" />
+            <TextBox Grid.Column="3" Text="{Binding StudentDepartment}" />
+            <TextBox Grid.Column="4" Text="{Binding StudentDistrict}" />
+            <Button Grid.Column="5" Content="Add" Command="{Binding AddCommand}" />
+            <Button Grid.Column="6" Content="Update" Command="{Binding UpdateCommand}" />
+            <Button Grid.Column="7" Content="Refresh" Command="{Binding RefreshCommand}" />
+            <Button Grid.Column="8" Content="Delete" Command="{Binding DeleteCommand}" />
+        </Grid>
+    </Grid>
+</Window>
+    
